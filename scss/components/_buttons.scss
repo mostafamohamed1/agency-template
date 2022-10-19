@@ -1,0 +1,48 @@
+@use "./../helpers/variables" as *;
+@use "./../helpers/mixin" as *;
+
+.btn,
+.btn:active,
+.btn:visited {
+  width: fit-content;
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn__primary {
+  background-color: rgba($red-color, 1);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba($red-color, 0.5);
+  }
+}
+
+.btn__secondary {
+  background-color: rgba($yellow-color, 1);
+  transition: 0.3s;
+  &:hover {
+    background-color: rgba($yellow-color, 0.7);
+  }
+}
+
+.btn__large {
+  padding: 0.7rem 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+
+  @include breakpoint(medium) {
+    padding: 1.5rem 2.5rem;
+    font-size: 3rem;
+  }
+}

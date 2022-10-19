@@ -1,0 +1,53 @@
+@use "./../helpers/variables" as *;
+
+.heading {
+  margin-bottom: 10rem;
+  position: relative;
+  text-align: center;
+  color: $dark-color;
+
+  &__primary {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 10rem;
+    background-color: $dark-color;
+  }
+
+  &.white {
+    color: white;
+
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &.arrowdown::after {
+    content: "\f107";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    height: 5rem;
+    width: 5rem;
+    bottom: -7rem;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+}

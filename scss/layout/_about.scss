@@ -1,0 +1,30 @@
+@use "./../helpers/mixin" as *;
+@use "./../helpers/variables" as *;
+
+// Start About
+.about {
+  padding: $padding 0;
+
+  .box {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    &__image {
+      margin-bottom: 2rem;
+    }
+
+    &__info {
+      padding: 0 3rem;
+
+      & h4 {
+        font-size: 2rem;
+      }
+
+      & p {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        color: #8d8d8d;
+      }
+    }
+  }
+}

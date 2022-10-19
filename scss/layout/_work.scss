@@ -1,0 +1,57 @@
+@use "./../helpers/mixin" as *;
+@use "./../helpers/variables" as *;
+
+// Start Our Work
+
+.work {
+  padding: $padding 0;
+  background-color: $red-color;
+}
+
+.works-box {
+  display: flex;
+  flex-wrap: wrap;
+
+  & .box {
+    width: 50%;
+    @include breakpoint(mobile) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    display: flex;
+    & .image {
+      width: 50%;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .info {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(rgb(247, 68, 68), 0.7);
+      & .text {
+        text-align: center;
+
+        & i {
+          margin-bottom: 2rem;
+          font-size: 5rem;
+          color: rgba(white, 0.7);
+        }
+        & h4 {
+          font-size: 2rem;
+          color: white;
+        }
+        & p {
+          font-size: 1.6rem;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// End Our Work

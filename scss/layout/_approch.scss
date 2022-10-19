@@ -1,0 +1,108 @@
+@use "./../helpers/mixin" as *;
+@use "./../helpers/variables" as *;
+
+// Start Our Approch
+
+.approch {
+  padding: $padding 0;
+  background-color: $gray-xlight;
+
+  & .content {
+    &__box {
+      position: relative;
+      background-color: white;
+      display: flex;
+      box-shadow: 0 0 0.5rem 0.5rem #ddd;
+      margin-bottom: 4rem;
+
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+      }
+
+      & .step {
+        position: absolute;
+        top: 50%;
+        left: calc(25% - 5rem);
+        transform: translateY(-50%);
+        width: 10rem;
+        height: 10rem;
+        background-color: $red-color;
+        border-radius: 6px;
+        border: 3px solid #fff;
+        @include breakpoint(mobile) {
+          display: none;
+        }
+
+        & > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: 100%;
+        }
+
+        & span {
+          display: block;
+          font-size: 2rem;
+          font-weight: bold;
+          color: white;
+          line-height: 1;
+
+          &:first-child {
+            font-size: 5rem;
+            font-style: italic;
+          }
+        }
+      }
+
+      &:nth-of-type(even) .step {
+        left: auto;
+        right: calc(25% - 5rem);
+      }
+
+      & .image {
+        width: 25%;
+        & img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        @include breakpoint(mobile) {
+          display: none;
+        }
+      }
+
+      & .info {
+        padding: 0 10rem;
+        width: 75%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        & h4 {
+          font-size: 2rem;
+          color: $dark-color;
+        }
+
+        & p {
+          font-size: 1.4rem;
+          color: $gray-dark;
+        }
+
+        @include breakpoint(mobile) {
+          width: 100%;
+          padding: 5rem;
+        }
+      }
+      &:nth-of-type(even) .info {
+        direction: rtl;
+        @include breakpoint(mobile) {
+          direction: ltr;
+        }
+      }
+    }
+  }
+}
+
+// End Our Approch

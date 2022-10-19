@@ -1,0 +1,58 @@
+@use "./../helpers/mixin" as *;
+@use "./../helpers/variables" as *;
+
+.newsletter {
+  padding: $padding 0;
+  background-color: $dark-xcolor;
+
+  &__box {
+    text-align: center;
+
+    & input {
+      display: block;
+      margin: 0 auto 2rem;
+      padding: 2rem;
+      background-color: $dark-color;
+      border: none;
+      width: 70%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    & button {
+      background-color: transparent;
+      color: $gray-light;
+      border: 1px solid $gray-light;
+      padding: 1rem 2rem;
+      font-size: 2rem;
+    }
+  }
+
+  &__social {
+    font-size: 4rem;
+    color: white;
+    padding: 2rem;
+
+    & i {
+      width: 6rem;
+      height: 6rem;
+      line-height: 6rem;
+      border-radius: 3px;
+      border: 1px solid #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        color: $red-color;
+        border-color: $red-color;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: $gray-dark;
+  }
+}

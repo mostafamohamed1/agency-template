@@ -1,0 +1,37 @@
+// Media Query
+@mixin breakpoint($size) {
+  @if $size == "mobile" {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $size == "small" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $size == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $size == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Arrow
+@mixin arrow($direction) {
+  @if $direction == "top" {
+    border-width: 2rem;
+    border-color: transparent transparent white transparent;
+    border-style: solid;
+    top: -4rem;
+    left: calc(50% - 2rem);
+  }
+}

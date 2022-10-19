@@ -1,0 +1,98 @@
+@use "./../helpers/mixin" as *;
+
+// container
+
+.container {
+  padding: 0 1.5rem;
+  margin: 0 auto;
+
+  @include breakpoint(small) {
+    max-width: 740px;
+  }
+
+  @include breakpoint(medium) {
+    max-width: 960px;
+  }
+
+  @include breakpoint(large) {
+    max-width: 1140px;
+  }
+
+  @include breakpoint(mobile) {
+    max-width: 100%;
+  }
+}
+
+// Grid Start
+.row {
+  @include breakpoint(small) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint(medium) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint(large) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}
+
+$grid-cols: 12;
+@for $i from 1 through $grid-cols {
+  $margin: 0.5%;
+  $cols: percentage($i / $grid-cols);
+
+  .col-#{$i} {
+    @include breakpoint(mobile) {
+      margin: 0 $margin;
+      max-width: calc($cols - ($margin * 2));
+    }
+  }
+}
+
+@for $i from 1 through $grid-cols {
+  $margin: 0.5%;
+  $cols: percentage($i / $grid-cols);
+
+  .col-sm-#{$i} {
+    @include breakpoint(small) {
+      margin: 0 $margin;
+      max-width: calc($cols - ($margin * 2)) !important;
+      flex: 0 0 calc($cols - ($margin * 2)) !important;
+    }
+  }
+}
+
+@for $i from 1 through $grid-cols {
+  $margin: 0.5%;
+  $cols: percentage($i / $grid-cols);
+
+  .col-md-#{$i} {
+    @include breakpoint(medium) {
+      margin: 0 $margin;
+      max-width: calc($cols - ($margin * 2)) !important;
+      flex: 0 0 calc($cols - ($margin * 2)) !important;
+    }
+  }
+}
+
+@for $i from 1 through $grid-cols {
+  $margin: 0.5%;
+  $cols: percentage($i / $grid-cols);
+
+  .col-lg-#{$i} {
+    @include breakpoint(large) {
+      margin: 0 $margin;
+      max-width: calc($cols - ($margin * 2)) !important;
+      flex: 0 0 calc($cols - ($margin * 2)) !important;
+    }
+  }
+}

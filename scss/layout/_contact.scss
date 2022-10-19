@@ -1,0 +1,59 @@
+@use "./../helpers/mixin" as *;
+@use "./../helpers/variables" as *;
+
+.contact {
+  background-color: $blue-color;
+  padding: $padding 0;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 3px;
+
+    width: 70%;
+    margin: 0 auto;
+    padding: 5rem;
+    background-color: white;
+    position: relative;
+
+    @include breakpoint(mobile) {
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include arrow("top");
+    }
+
+    & > p {
+      font-size: 1.4rem;
+      color: $gray-dark;
+      text-align: center;
+      margin-bottom: 2rem;
+      width: 70%;
+    }
+
+    & > input {
+      display: block;
+      width: 90%;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      border: none;
+      border-radius: 3px;
+      background-color: $gray-xlight;
+
+      &:focus {
+        outline: 1px solid $blue-color;
+      }
+    }
+
+    & > button {
+      padding: 1rem 2rem;
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+  }
+}
